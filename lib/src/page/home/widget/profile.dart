@@ -102,9 +102,10 @@ class _ProfilePageState extends State<ProfilePage> {
 
   logoutUser() async {
     var prefs = await SharedPreferences.getInstance();
-    prefs.remove("userName");
-    prefs.remove("email");
-    prefs.remove("password");
+    prefs.setString("userName", "");
+    prefs.setString("email", "");
+    prefs.setString("password", "");
+    prefs.setBool("isLoggedIn", false);
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
