@@ -9,7 +9,9 @@ Book Buddy App is a versatile project designed to access books in library, searc
 - User Login Page
 - Custom AppBar
 - HomePage
-- Book Recommended section
+  - Upcoming book carousel
+  - Book Recommended section
+  - All book section
 - Search Page
 - Theme Changing Icon
 - Book Detail Page
@@ -29,11 +31,13 @@ Book Buddy App is a versatile project designed to access books in library, searc
     #### dependencies
 
         1. SharedPreference - version:2.2.2 for storing the specific user locally.
-        2. Fluttertoast - version:8.2.4
+        2. Fluttertoast - version:8.2.4 to show error pop up
+        3. Smooth page indicator - version:1.1.0 to add carousel effect
 
         Inside pubspecs.yaml file under dependencies section add
 
         dependencies:
+          smooth_page_indicator: ^1.1.0
           shared_preferences: ^2.2.2
           fluttertoast: ^8.2.4 **
 
