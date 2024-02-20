@@ -34,7 +34,7 @@ Book Buddy App is a versatile project designed to access books in library, searc
         2. Fluttertoast - version:8.2.4 to show error pop up
         3. Smooth page indicator - version:1.1.0 to add carousel effect
 
-        Inside pubspecs.yaml file under dependencies section add
+        Inside pubspec.yaml file under dependencies section add
 
         dependencies:
           smooth_page_indicator: ^1.1.0
