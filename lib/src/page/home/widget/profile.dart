@@ -30,7 +30,7 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           children: [
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
             CircleAvatar(
               radius: 50,

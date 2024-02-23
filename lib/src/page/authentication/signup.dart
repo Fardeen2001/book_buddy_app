@@ -36,120 +36,118 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Image(
-                image: AssetImage("assets/images/logo.png"),
-                height: 150,
-              ),
-              const Text(
-                "Create Your Account",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Text(
-                "Disclaimer: Entered data is not Authenticated.",
-                style:
-                    TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Form(
-                child: Column(
-                  children: [
-                    TextFormField(
-                        controller: userNameController,
-                        keyboardType: TextInputType.name,
-                        decoration: InputDecoration(
-                            labelText: "User Name",
-                            prefixIcon: const Icon(Icons.person_rounded),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Field is required';
-                          }
-                          return null;
-                        }),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    TextFormField(
-                        controller: emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                            labelText: "Email",
-                            prefixIcon: const Icon(Icons.email_rounded),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Field is required';
-                          }
-                          return null;
-                        }),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    TextFormField(
-                        controller: passwordController,
-                        obscureText: true,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                            labelText: "Password",
-                            prefixIcon: const Icon(Icons.password_outlined),
-                            suffixIcon: IconButton(
-                              icon: const Icon(Icons.visibility),
-                              onPressed: () {},
-                            ),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Field is required';
-                          }
-                          return null;
-                        }),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    TextButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginScreen(
-                                      settingsController:
-                                          widget.settingsController)));
-                        },
-                        child: const Text("Already Have An Account?")),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () => createUserAccount(),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF6741FF)),
-                        child: const Text(
-                          "Create Account",
-                          style: TextStyle(color: Colors.white),
-                        ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Image(
+              image: AssetImage("assets/images/logo.png"),
+              height: 150,
+            ),
+            const Text(
+              "Create Your Account",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              "Disclaimer: Entered data is not Authenticated.",
+              style:
+                  TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Form(
+              child: Column(
+                children: [
+                  TextFormField(
+                      controller: userNameController,
+                      keyboardType: TextInputType.name,
+                      decoration: InputDecoration(
+                          labelText: "User Name",
+                          prefixIcon: const Icon(Icons.person_rounded),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Field is required';
+                        }
+                        return null;
+                      }),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  TextFormField(
+                      controller: emailController,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                          labelText: "Email",
+                          prefixIcon: const Icon(Icons.email_rounded),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Field is required';
+                        }
+                        return null;
+                      }),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  TextFormField(
+                      controller: passwordController,
+                      obscureText: true,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                          labelText: "Password",
+                          prefixIcon: const Icon(Icons.password_outlined),
+                          suffixIcon: IconButton(
+                            icon: const Icon(Icons.visibility),
+                            onPressed: () {},
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Field is required';
+                        }
+                        return null;
+                      }),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen(
+                                    settingsController:
+                                        widget.settingsController)));
+                      },
+                      child: const Text("Already Have An Account?")),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () => createUserAccount(),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF6741FF)),
+                      child: const Text(
+                        "Create Account",
+                        style: TextStyle(color: Colors.white),
                       ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
